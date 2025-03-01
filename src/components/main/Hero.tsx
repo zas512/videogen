@@ -31,7 +31,7 @@ const HeroSection = () => {
         />
         <BsFillPlayCircleFill className="absolute inset-0 m-auto text-gray-200 text-7xl" />
       </div>
-      <div className="absolute -top-32 left-0 -z-10 h-[10%] w-full bg-[#9d00ff] opacity-15 blur-3xl"></div>
+      <div className="absolute -top-32 left-0 -z-10 h-[10%] w-full bg-[#9d00ff] opacity-10 dark:opacity-15 blur-3xl"></div>
     </section>
   );
 };
