@@ -36,14 +36,13 @@ const Page = () => {
 
   return (
     <div className="p-2">
-      <p className="text-6xl font-bold gradient-text font-mono">Dashboard</p>
+      <p className="text-5xl font-bold gradient-text font-mono">Dashboard</p>
       <p className="font-bold text-lg font-mono w-[35%]">
         Here you’ll find all the videos you’ve generated. Easily access, manage,
         and download your AI-created content anytime. Keep track of your
         creations in one place!
       </p>
 
-      {/* Full-Screen Media Scroller */}
       <div className="relative w-full overflow-hidden">
         <motion.div
           className="flex w-max"
@@ -75,7 +74,6 @@ const Page = () => {
         </motion.div>
       </div>
 
-      {/* Hide scrollbar */}
       <style>{`
         ::-webkit-scrollbar {
           display: none;
