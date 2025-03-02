@@ -28,10 +28,8 @@ const Layout = () => {
     <div className="h-screen flex flex-col">
       <NavbarD />
       <div className="flex flex-1">
-        {/* Pass activeMenu as a prop */}
         <SidebarD setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
 
-        {/* Dynamic Content Area */}
         <div className="flex-1 p-4">{renderContent()}</div>
       </div>
     </div>
