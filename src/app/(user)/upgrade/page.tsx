@@ -6,13 +6,13 @@ function Page() {
   return (
     <>
       <div>
-        <p className="mb-4 font-mono text-6xl font-bold w-[65%]">
+        <p className="mb-4 font-mono text-5xl font-bold w-[50%] ">
           <span className="gradient-text">Flexible Options</span>
           That Match Your <span className="gradient-text">Budget</span>
         </p>
-        <div className='flex justify-between items-center px-6'>
+        <div className='flex justify-center items-center gap-10 pt-10 ' >
           {/* Starter Plan */}
-          <div className='w-72 h-96 bg-gray-200 rounded-xl px-4 pt-4'>
+          <div className=' h-[60vh] rounded-xl px-4 pt-4 border-1 border-[#000099]'>
             <p className="font-black text-2xl font-mono">Starter plan</p>
             <p className='font-mono text-lg'>Best for trying</p>
 
@@ -27,7 +27,7 @@ function Page() {
 
             <p className='text-center font-mono text-4xl mt-10 font-black'>$0/month</p>
             <div className='flex justify-center items-center mt-4'>
-              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-4 px-2 gap-x-2'>
+              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-10 px-2 gap-x-2'>
                 <p className='text-sm'>Try for free</p>
                 <Image src={RightIcon} alt='arrow' width={20} height={20} />
               </div>
@@ -36,7 +36,7 @@ function Page() {
           </div>
 
           {/* Additional Plans (Placeholder) */}
-          <div className='w-72 h-96 bg-gray-200 rounded-xl px-4 pt-4'>
+          <div className='h-[60vh]  rounded-xl px-4 pt-4 border-1 border-[#000099]'>
             <p className="font-black text-2xl font-mono">Pro plan</p>
             <p className='font-mono text-lg'>For Growing Creators</p>
 
@@ -51,13 +51,13 @@ function Page() {
 
             <p className='text-center font-mono text-4xl mt-10 font-black'>$19/month</p>
             <div className='flex justify-center items-center mt-4'>
-              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-4 px-2 gap-x-2'>
+              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-10 px-2 gap-x-2'>
                 <p className='text-sm'>Get now</p>
               </div>
 
             </div>
           </div>
-          <div className='w-72 h-96 bg-gray-200 rounded-xl px-4 pt-4'>
+          <div className='h-[60vh] rounded-xl px-4 pt-4 border-1 border-[#000099]'>
             <p className="font-black text-2xl font-mono">Business Plan</p>
             <p className='font-mono text-lg'>Best for Bussinesses</p>
 
@@ -72,7 +72,7 @@ function Page() {
 
             <p className='text-center font-mono text-4xl mt-10 font-black'>$49/month</p>
             <div className='flex justify-center items-center mt-4'>
-              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-4 px-2 gap-x-2'>
+              <div className='w-32 h-12 rounded-full bg-[#000099] text-white font-mono text-lg flex justify-center items-center mt-10 px-2 gap-x-2'>
                 <p className='text-sm'>Get now</p>
               </div>
 
