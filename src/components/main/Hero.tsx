@@ -5,20 +5,19 @@ import img2 from "@/assets/2.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center py-20 text-center">
-      <h1 className="mb-8 font-mono text-8xl font-bold">
+    <section className="relative flex flex-col items-center justify-center py-2 text-center mb-6">
+      <h1 className="mb-2 font-mono text-6xl w-[60%] font-black">
         <span className="gradient-text">Transform </span>
         Your Ideas into Stunning <span className="gradient-text">Videos</span>
       </h1>
-      <p className="mb-10 w-[50%] text-2xl">
-        Unleash the power of AI to create professional-quality videos in minutes. Whether you're a marketer, educator,
-        or content creator, our platform makes video production effortless and efficient.
+      <p className="mb-4 text-lg">
+      Bring your ideas to life with AI-powered video creation.Create captivating visuals effortlessly.
       </p>
-      <button className="mb-20 flex items-center rounded-xl bg-gradient-to-r from-[#9d00ff] to-[#ff00ff] px-6 py-4 text-xl text-white">
-        <BsStars className="mr-2 size-6" /> Try SlickMagic
+      <button className="mb-4 flex text-xs items-center rounded-xl bg-gradient-to-r from-[#9d00ff] to-[#ff00ff] px-5 py-4 text-xl text-white">
+        <BsStars className="mr-2 size-4 " /> Try SlickMagic
       </button>
       <div
-        className="rounded-4xl relative w-[70%] border border-[#ff00ff]/30 p-6 shadow-[0_0_15px_rgba(0,0,0,0.2)]"
+        className="rounded-4xl relative w-[50%] border border-[#ff00ff]/30 p-6 shadow-[0_0_15px_rgba(0,0,0,0.2)]"
       >
         <Image
           src={img2}
