@@ -196,7 +196,7 @@ function Page() {
               </div>
             </div>
           </div>
-          <div className="mt-10 flex w-1/2 flex-col">
+          <div className="mt-10 flex w-1/2 flex-col px-10">
             <div className="flex h-[550px] w-[350px] items-center justify-center overflow-hidden rounded-lg bg-gray-200">
               <Image alt="img" src={dummyImg1} className="h-full w-full object-cover" />
             </div>

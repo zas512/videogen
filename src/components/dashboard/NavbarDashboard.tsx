@@ -3,7 +3,7 @@ import Image from 'next/image';
 import logo from '@/assets/logo.png';
 import avatar from '@/assets/avatar.png';   
 
-function NavbarD() {
+function NavbarDashboard() {
   return (
     <>
       <div className='h-10 flex justify-between items-center px-10 my-2'>
@@ -18,4 +18,4 @@ function NavbarD() {
   );
 }
 
-export default NavbarD;
+export default NavbarDashboard;

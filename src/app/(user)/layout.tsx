@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import NavbarD from "@/components/dashboard/NavbarD";
+import NavbarDashboard from "@/components/dashboard/NavbarDashboard";
 import SidebarD from "@/components/dashboard/SidebarD";
 import Dashboard from "@/app/(user)/dashboard/page";
 import CreateNew from "@/app/(user)/create-new/page";
@@ -26,7 +26,7 @@ const Layout = () => {
 
   return (
     <div className="h-screen flex flex-col">
-      <NavbarD />
+      <NavbarDashboard />
       <div className="flex flex-1">
         <SidebarD setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
 
