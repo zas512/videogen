@@ -1,3 +1,16 @@
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
+import img3 from "@/assets/3.jpg";
+import img4 from "@/assets/4.jpg";
+import img5 from "@/assets/5.jpg";
+import img6 from "@/assets/6.jpg";
+import img7 from "@/assets/7.jpg";
+import img8 from "@/assets/8.jpg";
+import img9 from "@/assets/9.jpg";
+import img10 from "@/assets/10.jpg";
+import img11 from "@/assets/11.jpg";
+import img12 from "@/assets/12.jpg";
+
 export const testimonials = [
   {
     quote:
@@ -33,4 +46,19 @@ export const testimonials = [
     designation: "VP of Technology at FutureNet",
     src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
+];
+
+export const items = [
+  { id: 1, src: img1 },
+  { id: 2, src: img2 },
+  { id: 3, src: img3 },
+  { id: 4, src: img4 },
+  { id: 5, src: img5 },
+  { id: 6, src: img6 },
+  { id: 7, src: img7 },
+  { id: 8, src: img8 },
+  { id: 9, src: img9 },
+  { id: 10, src: img10 },
+  { id: 11, src: img11 },
+  { id: 12, src: img12 }
 ];
