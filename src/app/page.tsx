@@ -1,11 +1,11 @@
 import HeroSection from "@/components/main/Hero";
 import Navbar from "@/components/main/Navbar";
-import { AnimatedTestimonials } from "@/components/main/Testimonials";
 import Showcase from "@/components/main/Showcase";
 import AboutUs from "@/components/main/AboutUs";
 import Prices from "@/components/main/Prices";
+import FAQs from "@/components/main/FAQs";
 import ContactUs from "@/components/main/ContactUs";
-
+import Footer from "@/components/main/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +18,12 @@ export default function Home() {
       <AboutUs/>
       <hr className="border-t w-full" /> 
       <Prices/>
+      <hr className="border-t w-full" /> 
+      <FAQs/>
+      <hr className="border-t w-full" /> 
+      <ContactUs/>
+      <hr className="border-t w-full" /> 
+      <Footer/>
       {/* <AnimatedTestimonials /> */}
     </div>
   );
