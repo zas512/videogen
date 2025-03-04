@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -153,4 +163,78 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-abril-fatface {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.font-teko {
+  font-family: 'Teko', sans-serif;
+}
+
+.font-lora {
+  font-family: 'Lora', serif;
+}
+
+.font-bebas-neue {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.font-indie-flower {
+  font-family: 'Indie Flower', cursive;
+}
+
+.font-righteous {
+  font-family: 'Righteous', cursive;
+}
+
+.font-zilla-slab {
+  font-family: 'Zilla Slab', serif;
+}
+
+.font-satisfy {
+  font-family: 'Satisfy', cursive;
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.blur-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }

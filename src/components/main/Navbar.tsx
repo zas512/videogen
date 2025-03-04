@@ -9,8 +9,8 @@ const Navbar = () => {
         <div className="font-mono text-lg font-bold sm:text-2xl">AI VIDEO GEN</div>
         <div className="flex items-center gap-6">
           <button className="border-border hover:bg-hover flex cursor-pointer items-center justify-center rounded-full border px-4 py-3">
-            <RiArrowRightFill className="mr-3 size-7 rounded-full bg-gradient-to-r from-[#9d00ff] to-[#ff00ff] p-1 text-white" />
-            <p className="font-medium">Get Started</p>
+            <RiArrowRightFill className="mr-2 size-6 rounded-full bg-gradient-to-r from-[#9d00ff] to-[#ff00ff] p-1 text-white" />
+            <p className="font-medium font-sm">Get Started</p>
           </button>
           <ThemeToggle />
         </div>
