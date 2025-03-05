@@ -1,60 +1,51 @@
 import Image from "next/image";
-import avatar from "@/assets/avatar.png"; 
-import plusIcon from "@/assets/plusIcon.png"; 
+import avatar from "@/assets/avatar.png";
+import plusIcon from "@/assets/plusIcon.png";
 
 const ProfileWithPlus = () => {
   return (
-    <>
-      <div className="flex flex-col px-10">
-        {/* Avatar Section */}
-        <div className="flex items-center justify-center">
-          <div className="relative w-32 h-32"> {/* Increased size */}
-            <Image
-              src={avatar}
-              alt="Profile Picture"
-              width={128}  // Increased width
-              height={128} // Increased height
-              className="rounded-full"
-            />
-            {/* Plus Icon */}
-            <div className="absolute bottom-1 right-1 bg-blue-500 rounded-full p-2 border-2 border-white">
-              <Image src={plusIcon} alt="Add Icon" width={24} height={24} />
-            </div>
-          </div>
+    <div className="flex max-w-7xl flex-col items-start justify-start gap-10 px-10">
+      {/* Avatar Section */}
+      <div className="relative h-32 w-32">
+        <Image src={avatar} alt="Profile Picture" width={128} height={128} className="rounded-full" />
+        <div className="absolute bottom-0 right-0 rounded-full border-2 border-white bg-blue-500 p-2">
+          <Image src={plusIcon} alt="Add Icon" width={24} height={24} />
         </div>
+      </div>
 
-        {/* Input Fields */}
-        <div className="flex flex-col mt-6">
-          <p className="font-mono">First Name</p>
+      {/* Input Fields */}
+      <div className="mt-6 w-full space-y-10">
+        <section>
+          <p className="text-2xl font-semibold">First Name</p>
           <input
             type="text"
             placeholder="Enter First Name"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border w-full rounded-xl border px-4 py-3"
           />
-          <p className="font-mono mt-4">Last Name</p>
+        </section>
+        <section>
+          <p className="text-2xl font-semibold">Last Name</p>
           <input
             type="text"
             placeholder="Enter Last Name"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border w-full rounded-xl border px-4 py-3"
           />
-          <p className="font-mono mt-4">Email</p>
-          <input
-            type="text"
-            placeholder="Enter Email"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
-          />
-          <p className="font-mono mt-4">Password</p>
+        </section>
+        <section>
+          <p className="text-2xl font-semibold">Email</p>
+          <input type="text" placeholder="Enter Email" className="border-border w-full rounded-xl border px-4 py-3" />
+        </section>
+        <section>
+          <p className="text-2xl font-semibold">Password</p>
           <input
             type="text"
             placeholder="Enter Password"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border w-full rounded-xl border px-4 py-3"
           />
-        </div>
-        <button className="bg-[#000099] text-white font-mono w-fit px-8 h-12 mt-6 rounded-lg self-center">
-          Save Changes
-        </button>
+        </section>
       </div>
-    </>
+      <button className="gradient-bg rounded-xl px-6 py-3 text-2xl text-white">Save Changes</button>
+    </div>
   );
 };
 

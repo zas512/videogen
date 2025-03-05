@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -21,6 +21,7 @@
 
 :root {
   --background: #fdfdf4;
+  --background-secondary: oklch(0.985 0.002 247.839);
   --color: #1a202c;
   --border: oklch(0.373 0.034 259.733);
   --hover: oklch(0.928 0.006 264.531);
@@ -60,6 +61,7 @@
 
 .dark {
   --background: #02020b;
+  --background-secondary: #202020;
   --color: #f7fafc;
   --border: oklch(0.872 0.01 258.338);
   --hover: oklch(0.21 0.034 264.665);
@@ -98,6 +100,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-hover: var(--hover);
@@ -156,6 +159,10 @@
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-bg {
+  background: linear-gradient(to right, #9d00ff, #ff00ff);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -166,53 +173,52 @@
 }
 
 .font-roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .font-abril-fatface {
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
 }
 
 .font-pacifico {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 .font-teko {
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
 }
 
 .font-lora {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 .font-bebas-neue {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 .font-indie-flower {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 
 .font-righteous {
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 }
 
 .font-zilla-slab {
-  font-family: 'Zilla Slab', serif;
+  font-family: "Zilla Slab", serif;
 }
 
 .font-satisfy {
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
 }
 
-
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
 
 .scrollbar-custom {
@@ -237,4 +243,91 @@
 .blur-effect {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.featured-hard-blur-bg {
+  width: 88px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  margin-left: -44px;
+  top: -2px;
+  background: #9d00ff;
+  opacity: 0.5;
+  filter: blur(12px);
+}
+
+.featured-yellow-highlight-bg {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -124px;
+  width: 248px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 248, 0, 0.6) 50%,
+    rgba(255, 255, 255, 0) 85%
+  );
+}
+.featured-vertical-hard-blur-bg {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  margin-left: -64px;
+  width: 128px;
+  height: 280px;
+  border-radius: 280px;
+  opacity: 0.1;
+  background: #9d00ff;
+  filter: blur(48px);
+}
+
+.featured-soft-blur-bg {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  margin-left: -192px;
+  width: 384px;
+  height: 37px;
+  border-radius: 384px;
+  opacity: 0.2;
+  background: #fff800;
+  filter: blur(50px);
+}
+
+.featured-price-title {
+  position: relative;
+}
+
+.featured-price-title::before {
+  content: "";
+  position: absolute;
+  left: 44px;
+  top: -7px;
+  height: 17px;
+  width: 296px;
+  border-radius: 296px;
+  opacity: 0.2;
+  background: #9d00ff;
+  filter: blur(32px);
+}
+
+.pricing-card-border {
+  position: relative;
+}
+
+.pricing-card-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px 16px 0 0;
+  padding: 1px 1px 0;
+  background: linear-gradient(180deg, #ff00ff 49.5%, rgba(65, 75, 78, 0) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }

@@ -5,10 +5,14 @@ import { BsFillPlayCircleFill } from "react-icons/bs";
 
 const Showcase = () => {
   return (
-    <div className="relative w-full overflow-hidden py-10">
-      <div className="mb-8 text-center font-mono text-6xl">
-        <p>Discover the Magic</p>
-        <p className="text-4xl">Transforming Ideas into Captivating Videos</p>
+    <div id="featured" className="relative w-full overflow-hidden py-10">
+      <div className="mb-8 space-y-4 text-center">
+        <p className="font-mono text-3xl font-bold md:text-4xl xl:text-5xl 2xl:text-6xl">
+          Discover the <span className="gradient-text">Magic</span>
+        </p>
+        <p className="w-full text-base md:text-lg xl:text-xl 2xl:text-2xl">
+          Transforming Ideas into Captivating Videos
+        </p>
       </div>
       <div className="marquee">
         <div className="marquee-content">

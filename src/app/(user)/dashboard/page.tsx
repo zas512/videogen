@@ -1,87 +1,48 @@
 "use client";
-
-import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-import dummyImage1 from "@/assets/DummyImg1.jpg";
-import dummyImage2 from "@/assets/DummyImg2.jpg";
-import dummyImage3 from "@/assets/DummyImg3.jpg";
-
-const media: (string | StaticImageData)[] = [
-  dummyImage1,
-  dummyImage2,
-  dummyImage3,
-  dummyImage1,
-  "/videos/video2.mp4",  // replace images and these url's with actualy video url's to show videos
-  "/videos/video3.mp4",
-];
-
+import { useState } from "react";
+import Image from "next/image";
+import { items } from "@/lib/data";
+import { BsFillPlayCircleFill } from "react-icons/bs";
+import Link from "next/link";
 const Page = () => {
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  const handleVideoClick = (index: number) => {
-    if (videoRefs.current[index]) {
-      const video = videoRefs.current[index];
-
-      if (video?.paused) {
-        video?.play();
-        setPlayingIndex(index);
-      } else {
-        video?.pause();
-        setPlayingIndex(null);
-      }
-    }
-  };
+  const [layout, setLayout] = useState("landscape");
+  const [status, setStatus] = useState("all");
 
   return (
-    <div className="p-2">
-      <p className="text-5xl font-bold gradient-text font-mono">Dashboard</p>
-      <p className="font-bold text-lg font-mono w-[35%]">
-        Here you’ll find all the videos you’ve generated. Easily access, manage,
-        and download your AI-created content anytime. Keep track of your
-        creations in one place!
-      </p>
-
-      <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex w-max"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+    <div className="p-4">
+      {/* Top Bar */}
+      <div className="mb-10 flex flex-wrap items-center justify-end gap-4">
+        <select
+          value={layout}
+          onChange={(e) => setLayout(e.target.value)}
+          className="border-border rounded-lg border px-4 py-2 focus:outline-none"
         >
-          {[...media, ...media].map((item, index) => (
-            <div
-              key={index}
-              className="relative m-10 mx-6 w-[14vw] h-[44vh] bg-black rounded-xl overflow-hidden flex-shrink-0"
-            >
-              {typeof item === "string" && item.endsWith(".mp4") ? (
-                <video
-                ref={(el) => {
-                  videoRefs.current[index] = el;
-                }}
-                
-                  src={item}
-                  className="w-full h-full object-cover cursor-pointer"
-                  onClick={() => handleVideoClick(index)}
-                  muted
-                  playsInline
-                />
-              ) : (
-                <Image src={item} alt={`media-${index}`} fill className="object-cover" />
-              )}
-            </div>
-          ))}
-        </motion.div>
+          <option value="portrait">Portrait</option>
+          <option value="landscape">Landscape</option>
+        </select>
+        <select
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
+          className="border-border rounded-lg border px-4 py-2 focus:outline-none"
+        >
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+          <option value="failed">Failed</option>
+        </select>
+        <button className="gradient-bg rounded-lg px-4 py-2 font-bold text-white shadow-md">
+          <Link href="/create">Create New</Link>
+        </button>
       </div>
 
-      <style>{`
-        ::-webkit-scrollbar {
-          display: none;
-        }
-        body {
-          overflow-x: hidden;
-        }
-      `}</style>
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {items.map((item) => (
+          <div key={item.id} className="relative h-[40vh] w-full overflow-hidden rounded-xl bg-black shadow-lg">
+            <Image src={item.src} alt={`media-${item.id}`} fill className="object-cover" />
+            <BsFillPlayCircleFill className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-white" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

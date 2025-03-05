@@ -11,6 +11,45 @@ import img10 from "@/assets/10.jpg";
 import img11 from "@/assets/11.jpg";
 import img12 from "@/assets/12.jpg";
 
+export const items = [
+  { id: 1, src: img1 },
+  { id: 2, src: img2 },
+  { id: 3, src: img3 },
+  { id: 4, src: img4 },
+  { id: 5, src: img5 },
+  { id: 6, src: img6 },
+  { id: 7, src: img7 },
+  { id: 8, src: img8 },
+  { id: 9, src: img9 },
+  { id: 10, src: img10 },
+  { id: 11, src: img11 },
+  { id: 12, src: img12 }
+];
+
+export const voices = {
+  male: [
+    { name: "Charlie", audio: "/voices/Charlie.mp3" },
+    { name: "George", audio: "/voices/George.mp3" },
+    { name: "Callum", audio: "/voices/Callum.mp3" },
+    { name: "Liam", audio: "/voices/Liam.mp3" },
+    { name: "Will", audio: "/voices/Will.mp3" },
+    { name: "Eric", audio: "/voices/Eric.mp3" },
+    { name: "Chris", audio: "/voices/Chris.mp3" },
+    { name: "Brian", audio: "/voices/Brian.mp3" },
+    { name: "Daniel", audio: "/voices/Daniel.mp3" },
+    { name: "Bill", audio: "/voices/Bill.mp3" }
+  ],
+  female: [
+    { name: "Sarah", audio: "/voices/Sarah.mp3" },
+    { name: "Laura", audio: "/voices/Laura.mp3" },
+    { name: "Charlotte", audio: "/voices/Charlotte.mp3" },
+    { name: "Alice", audio: "/voices/Alice.mp3" },
+    { name: "Matilda", audio: "/voices/Matilda.mp3" },
+    { name: "Jessica", audio: "/voices/Jessica.mp3" },
+    { name: "Lily", audio: "/voices/Lily.mp3" }
+  ]
+};
+
 export const testimonials = [
   {
     quote:
@@ -46,19 +85,4 @@ export const testimonials = [
     designation: "VP of Technology at FutureNet",
     src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
-];
-
-export const items = [
-  { id: 1, src: img1 },
-  { id: 2, src: img2 },
-  { id: 3, src: img3 },
-  { id: 4, src: img4 },
-  { id: 5, src: img5 },
-  { id: 6, src: img6 },
-  { id: 7, src: img7 },
-  { id: 8, src: img8 },
-  { id: 9, src: img9 },
-  { id: 10, src: img10 },
-  { id: 11, src: img11 },
-  { id: 12, src: img12 }
 ];

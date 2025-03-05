@@ -1,17 +1,10 @@
 "use client";
-
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa6";
 import { testimonials } from "@/lib/data";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  designation: string;
-  src: string;
-};
 export const AnimatedTestimonials = ({ autoplay = false }: { autoplay?: boolean }) => {
   const [active, setActive] = useState(0);
 
@@ -38,29 +31,9 @@ export const AnimatedTestimonials = ({ autoplay = false }: { autoplay?: boolean 
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="flex bg-red-500 px-4 py-20">
-      <section>
-        <div className="mb-6 bg-emerald-300">
-          <span className="rounded-full bg-gray-800 px-3 py-1 text-sm text-purple-400">Testimonials</span>
-          <h2 className="mt-2 text-3xl font-bold">What Our Users Say</h2>
-          <p className="mt-2 text-gray-400">
-            Slic Magic AI is revolutionizing the way creators generate high-quality videos. Trusted by thousands, we
-            make content creation effortless and impactful.
-          </p>
-        </div>
-
-        <div className="mt-6 flex items-center justify-between">
-          <div>
-            <h3 className="text-2xl font-bold">500k+</h3>
-            <p className="text-sm text-gray-400">Videos created with AI-powered automation</p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold">4.9/5</h3>
-            <p className="text-sm text-gray-400">Average user rating for seamless AI video generation</p>
-          </div>
-        </div>
-      </section>
-      <div className="relative grid grid-cols-1 gap-20 bg-amber-300 md:grid-cols-2">
+    <div className="px-4">
+      <h2 className="gradient-text mt-4 mb-12 text-left font-mono text-3xl font-semibold">What Our Users Say About Us</h2>
+      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>

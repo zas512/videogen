@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { BsStars, BsFillPlayCircleFill } from "react-icons/bs";
 import img2 from "@/assets/2.jpg";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -16,7 +17,7 @@ const HeroSection = () => {
         </p>
       </div>
       <button className="flex items-center rounded-xl bg-gradient-to-r from-[#9d00ff] to-[#ff00ff] px-3 py-2 text-lg text-white sm:px-4 sm:py-3 sm:text-xl">
-        <BsStars className="mr-2 size-5 sm:size-6" /> Try SlickMagic
+        <BsStars className="mr-2 size-5 sm:size-6" /> <Link href="/dashboard">Try SlickMagic</Link>
       </button>
       <div className="rounded-4xl relative w-[70%] border border-[#ff00ff]/30 p-6 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
         <Image

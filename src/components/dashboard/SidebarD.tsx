@@ -1,62 +1,47 @@
 "use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { JSX } from "react";
+import { FaTachometerAlt, FaPlusCircle, FaRocket, FaCog } from "react-icons/fa";
 
-import React from "react";
-import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+const SidebarD = () => {
+  const pathname = usePathname();
 
-interface SidebarDProps {
-  setActiveMenu: (menu: string) => void;
-  activeMenu: string;
-}
-
-const SidebarD: React.FC<SidebarDProps> = ({ setActiveMenu, activeMenu }) => {
   return (
-    <Sidebar className="h-full p-6 my-14">
-      <Menu>
-        <MenuItem
-          onClick={() => setActiveMenu("dashboard")}
-          style={{
-            color: activeMenu === "dashboard" ? "#00BCD4" : "inherit",
-            fontWeight: activeMenu === "dashboard" ? "bold" : "normal",
-            fontSize: activeMenu === "dashboard" ? "1.125rem" : "1rem",
-          }}
-        >
-          Dashboard
-        </MenuItem>
+    <div className="bg-background border-border flex min-h-screen w-72 flex-col gap-2 border-r p-6 shadow-[10px_0_10px_-10px_rgba(0,0,0,0.3)]">
+      <SidebarItem icon={<FaTachometerAlt />} text="Dashboard" href="/dashboard" active={pathname === "/dashboard"} />
+      <SidebarItem icon={<FaPlusCircle />} text="Create" href="/create" active={pathname === "/create"} />
+      <SidebarItem icon={<FaRocket />} text="Upgrade" href="/upgrade" active={pathname === "/upgrade"} />
+      <SidebarItem icon={<FaCog />} text="Settings" href="/settings" active={pathname === "/settings"} />
+    </div>
+  );
+};
 
-        <MenuItem
-          onClick={() => setActiveMenu("create-new")}
-          style={{
-            color: activeMenu === "create-new" ? "#00BCD4" : "inherit",
-            fontWeight: activeMenu === "create-new" ? "bold" : "normal",
-            fontSize: activeMenu === "create-new" ? "1.125rem" : "1rem",
-          }}
-        >
-          Create Video
-        </MenuItem>
-
-        <MenuItem
-          onClick={() => setActiveMenu("upgrade")}
-          style={{
-            color: activeMenu === "upgrade" ? "#00BCD4" : "inherit",
-            fontWeight: activeMenu === "upgrade" ? "bold" : "normal",
-            fontSize: activeMenu === "upgrade" ? "1.125rem" : "1rem",
-          }}
-        >
-          Upgrade
-        </MenuItem>
-
-        <MenuItem
-          onClick={() => setActiveMenu("settings")}
-          style={{
-            color: activeMenu === "settings" ? "#00BCD4" : "inherit",
-            fontWeight: activeMenu === "settings" ? "bold" : "normal",
-            fontSize: activeMenu === "settings" ? "1.125rem" : "1rem",
-          }}
-        >
-          Settings
-        </MenuItem>
-      </Menu>
-    </Sidebar>
+// Sidebar Item Component
+const SidebarItem = ({
+  icon,
+  text,
+  href,
+  active
+}: {
+  icon: JSX.Element;
+  text: string;
+  href: string;
+  active: boolean;
+}) => {
+  return (
+    <Link href={href} className="group">
+      <div
+        className={`flex cursor-pointer items-center gap-3 rounded-xl px-5 py-3 text-xl transition-all duration-300 ${
+          active
+            ? "gradient-bg text-white shadow-lg"
+            : "hover:bg-background-secondary text-gray-700 hover:text-gray-800 hover:shadow-md dark:text-gray-300 dark:hover:text-white"
+        }`}
+      >
+        <span>{icon}</span>
+        <span>{text}</span>
+      </div>
+    </Link>
   );
 };
 

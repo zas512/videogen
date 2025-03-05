@@ -1,47 +1,44 @@
-import React from 'react'
-
 const ContactUs = () => {
   return (
-    <>
-    <div className="flex flex-col items-center justify-center py-4 text-center">
-      <h6 className="mb-4 w-[50%] font-mono text-6xl font-bold">
-        <span className="font-mono gradient-text">Get in Touch</span> with Us
-      </h6>
-      <p className="mb-6 text-lg w-[60%]">
-      Have questions or need assistance? Our team is here to help! Reach out to us anytime, and we’ll get back to you as soon as possible. Whether it’s support, feedback, or collaboration, we’re just a message away.
-      </p>
-      
-      </div>
-      <div className='flex flex-col justify-between items-start mx-20 mb-10'>
-      <div className="flex flex-col mt-6">
-          <p className="font-mono">Name*</p>
+    <div id="contact" className="mt-20">
+      <section className="mb-8 space-y-4 text-center">
+        <p className="font-mono text-3xl font-bold md:text-4xl xl:text-5xl 2xl:text-6xl">
+          <span className="gradient-text">Get in Touch</span> With Us
+        </p>
+        <p className="w-full text-base md:text-lg xl:text-xl 2xl:text-2xl">
+          Have questions or need assistance? Our team is here to help! Reach out to us anytime.
+        </p>
+      </section>
+      <section className="mb-10 flex w-full items-center justify-center text-lg">
+        <div className="w-7xl">
+          <p>Name</p>
           <input
             type="text"
             placeholder="Enter Name"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border mb-6 w-full rounded-xl border px-4 py-3"
           />
-          <p className="font-mono mt-4">Phone*</p>
+          <p>Phone</p>
           <input
             type="text"
             placeholder="Enter Phone Number"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border mb-6 w-full rounded-xl border px-4 py-3"
           />
-          <p className="font-mono mt-4">Email*</p>
+          <p>Email</p>
           <input
             type="text"
             placeholder="Enter Email"
-            className="w-[100vh] h-12 border border-black-200 rounded-lg px-2"
+            className="border-border mb-6 w-full rounded-xl border px-4 py-3"
           />
-          <p className="font-mono mt-4">Message</p>
-          <input
-            type="text"
+          <p>Message</p>
+          <textarea
             placeholder="Enter your query"
-            className="w-[100vh] h-28 border border-black-200 rounded-lg px-2"
+            rows={5}
+            className="border-border w-full rounded-xl border px-4 py-3"
           />
         </div>
-      </div>
-      </>
-  )
-}
+      </section>
+    </div>
+  );
+};
 
-export default ContactUs
+export default ContactUs;
