@@ -15,7 +15,7 @@ const ThemeToggle = () => {
         onClick={toggleDropdown}
         className={`border-border hover:bg-hover flex cursor-pointer items-center justify-center rounded-full border p-2 ${theme === "dark" ? "hover:text-yellow-400" : "hover:text-yellow-900"}`}
       >
-        {theme === "dark" ? <FaSun className="size-6" /> : <FaMoon className="size-6" />}
+        {theme === "dark" ? <FaSun className="size-4 lg:size-6" /> : <FaMoon className="size-4 lg:size-6" />}
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -23,7 +23,7 @@ const ThemeToggle = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="border-border bg-background absolute right-0 top-14 z-10 w-40 rounded-md border shadow-lg p-2"
+            className="border-border bg-background absolute right-0 top-14 z-10 w-40 rounded-md border p-2 shadow-lg"
           >
             <span
               className="hover:bg-hover flex cursor-pointer items-center p-2"

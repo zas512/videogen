@@ -1,19 +1,37 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { JSX } from "react";
-import { FaTachometerAlt, FaPlusCircle, FaRocket, FaCog } from "react-icons/fa";
+import { useState } from "react";
+import { FaTachometerAlt, FaPlusCircle, FaRocket, FaCog, FaBars, FaTimes } from "react-icons/fa";
 
 const SidebarD = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className="bg-background border-border flex min-h-screen w-72 flex-col gap-2 border-r p-6 shadow-[10px_0_10px_-10px_rgba(0,0,0,0.3)]">
-      <SidebarItem icon={<FaTachometerAlt />} text="Dashboard" href="/dashboard" active={pathname === "/dashboard"} />
-      <SidebarItem icon={<FaPlusCircle />} text="Create" href="/create" active={pathname === "/create"} />
-      <SidebarItem icon={<FaRocket />} text="Upgrade" href="/upgrade" active={pathname === "/upgrade"} />
-      <SidebarItem icon={<FaCog />} text="Settings" href="/settings" active={pathname === "/settings"} />
-    </div>
+    <>
+      <button
+        onClick={toggleSidebar}
+        className="fixed left-4 top-4 z-50 rounded-md bg-gray-800 p-2 text-white md:hidden"
+      >
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+
+      <div
+        className={`bg-background/50 border-border fixed inset-y-0 left-0 z-40 w-72 transform border-r p-6 shadow-lg backdrop-blur-3xl transition-transform duration-300 md:relative md:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } md:flex md:min-h-screen md:w-72 md:flex-col md:gap-2`}
+      >
+        <SidebarItem icon={<FaTachometerAlt />} text="Dashboard" href="/dashboard" active={pathname === "/dashboard"} />
+        <SidebarItem icon={<FaPlusCircle />} text="Create" href="/create" active={pathname === "/create"} />
+        <SidebarItem icon={<FaRocket />} text="Upgrade" href="/upgrade" active={pathname === "/upgrade"} />
+        <SidebarItem icon={<FaCog />} text="Settings" href="/settings" active={pathname === "/settings"} />
+      </div>
+    </>
   );
 };
 
@@ -24,7 +42,7 @@ const SidebarItem = ({
   href,
   active
 }: {
-  icon: JSX.Element;
+  icon: React.ReactNode;
   text: string;
   href: string;
   active: boolean;

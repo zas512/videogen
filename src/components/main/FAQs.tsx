@@ -26,26 +26,26 @@ const FAQ = () => {
   return (
     <section id="faq" className="mt-20">
       {/* Heading */}
-      <div className="mb-14 space-y-4 text-center">
+      <div className="mb-14 flex flex-col items-center justify-center space-y-4 text-center">
         <p className="font-mono text-3xl font-bold md:text-4xl xl:text-5xl 2xl:text-6xl">
-          We&apos;ve got you Covered <span className="gradient-text">24/7 Support</span>
+          We&apos;ve got you Covered <span className="gradient-text">24/7</span>
         </p>
-        <p className="w-full text-base md:text-lg xl:text-xl 2xl:text-2xl">
-          No matter the time or place, our support team is always ready to assist you. Get expert help whenever you need
-          it.
+        <p className="w-[90%] text-center text-base sm:w-[70%] md:text-lg xl:text-xl 2xl:text-2xl">
+          No matter the time or place, our support team is always ready to assist you.
         </p>
       </div>
-      <div className="mx-auto w-full max-w-[50vw]">
+      {/* FAQs */}
+      <div className="mx-auto w-full max-w-[90vw] text-sm md:text-base lg:max-w-[50vw] xl:text-lg 2xl:text-xl">
         {faqs.map((faq) => (
           <div key={faq.question} className="mb-7">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <DisclosureButton className="flex w-full items-center justify-between border-t px-4 pt-7 text-left text-lg">
-                    <span className="text-2xl font-semibold">{faq.question}</span>
+                  <DisclosureButton className="flex w-full items-center justify-between border-t px-4 pt-7 text-left">
+                    <span className="font-semibold tracking-wide">{faq.question}</span>
                     {open ? <BiMinus className="size-6" /> : <BiPlus className="size-6" />}
                   </DisclosureButton>
-                  <DisclosurePanel className="text-foreground-accent px-4 pb-2 pt-4 text-lg">
+                  <DisclosurePanel className="text-foreground-accent px-4 pb-2 pt-4 opacity-80">
                     {faq.answer}
                   </DisclosurePanel>
                 </>
